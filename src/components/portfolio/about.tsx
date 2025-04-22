@@ -11,7 +11,7 @@ export function About() {
         <div className="flex flex-col md:flex-row gap-6 items-center">
           <div className="md:w-1/3">
             <img
-              src="/lovable-uploads/28886b67-4177-4d86-8870-617d314c5de8.png"
+              src="/lovable-uploads/cv.png"
               alt="Yassir Amraoui"
               className="w-full h-auto rounded-lg shadow-md"
             />

@@ -8,7 +8,7 @@ export function Header() {
       <div className="flex items-center gap-4">
         <div className="overflow-hidden rounded-full border-4 border-portfolio-200 h-24 w-24 flex-shrink-0">
           <img 
-            src="/lovable-uploads/28886b67-4177-4d86-8870-617d314c5de8.png" 
+            src="/lovable-uploads/yassir.jpg" 
             alt="Yassir Amraoui" 
             className="h-full w-full object-cover"
           />
