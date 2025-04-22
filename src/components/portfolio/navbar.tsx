@@ -57,13 +57,15 @@ export function Navbar() {
     <nav 
       className={cn(
         "fixed top-0 left-0 w-full z-50 transition-all duration-300",
-        isScrolled ? "bg-white shadow-md py-3" : "py-5"
+        isScrolled 
+          ? "bg-white shadow-md py-3 dark:bg-gray-900 dark:shadow-gray-800" 
+          : "py-5 dark:bg-transparent"
       )}
     >
       <div className="container max-w-4xl mx-auto px-4 flex justify-between items-center">
         <a 
           href="#" 
-          className="text-portfolio-800 font-bold text-xl"
+          className="text-portfolio-800 font-bold text-xl dark:text-white"
           onClick={(e) => {
             e.preventDefault();
             window.scrollTo({ top: 0, behavior: "smooth" });
@@ -80,22 +82,22 @@ export function Navbar() {
               className={cn(
                 "text-sm font-medium transition-colors",
                 activeSection === item.target 
-                  ? "text-portfolio-600" 
-                  : "text-portfolio-800 hover:text-portfolio-600"
+                  ? "text-portfolio-600 dark:text-portfolio-400" 
+                  : "text-portfolio-800 hover:text-portfolio-600 dark:text-portfolio-100 dark:hover:text-portfolio-400"
               )}
             >
               {item.label}
             </button>
           ))}
           
-          <div className="pl-2 border-l border-portfolio-200 flex items-center gap-3">
+          <div className="pl-2 border-l border-portfolio-200 flex items-center gap-3 dark:border-portfolio-700">
             <LanguageSwitch />
             <ThemeToggle />
           </div>
         </div>
         
         <button 
-          className="md:hidden text-portfolio-800"
+          className="md:hidden text-portfolio-800 dark:text-white"
           onClick={() => setIsOpen(!isOpen)}
           aria-label={isOpen ? "Fermer le menu" : "Ouvrir le menu"}
         >
@@ -106,7 +108,7 @@ export function Navbar() {
       {/* Mobile menu */}
       <div 
         className={cn(
-          "md:hidden absolute w-full bg-white shadow-md transition-all duration-300 origin-top",
+          "md:hidden absolute w-full bg-white shadow-md transition-all duration-300 origin-top dark:bg-gray-900",
           isOpen ? "scale-y-100 opacity-100" : "scale-y-0 opacity-0"
         )}
       >
@@ -118,13 +120,17 @@ export function Navbar() {
               className={cn(
                 "text-sm font-medium py-2 transition-colors text-left",
                 activeSection === item.target 
-                  ? "text-portfolio-600" 
-                  : "text-portfolio-800 hover:text-portfolio-600"
+                  ? "text-portfolio-600 dark:text-portfolio-400" 
+                  : "text-portfolio-800 hover:text-portfolio-600 dark:text-portfolio-100 dark:hover:text-portfolio-400"
               )}
             >
               {item.label}
             </button>
           ))}
+          <div className="flex items-center gap-3 pt-2 border-t border-portfolio-100 dark:border-portfolio-700">
+            <LanguageSwitch />
+            <ThemeToggle />
+          </div>
         </div>
       </div>
     </nav>
